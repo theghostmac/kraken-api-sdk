@@ -15,8 +15,8 @@ That runs `gofmt`, `go vet`, and `go test -race ./...`.
 
 ## Rules
 
-- **Match the Rust SDK's behaviour.** When porting a component, read the Rust
-  module named in the package's `doc.go` and port its tests too.
+- **Match the Rust SDK's behaviour.** When porting a component, read the matching
+  Rust module (see the layout table in `README.md`) and port its tests too.
 - **No `float64` for money.** Prices, volumes, balances and fees are decimals.
 - **`context.Context` first** on every call that can block or reach the network.
 - **Errors implement `sdkerr.Error`** (`Code`, `Category`, `Retryable`,

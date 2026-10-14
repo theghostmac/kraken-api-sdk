@@ -1,6 +1,6 @@
 # Kraken SDK (Go)
 
-> **Status: work in progress.** Package layout only; no functionality yet.
+> **Status: work in progress.** Only `types` exists so far.
 > See [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
 Go implementation of the Kraken unified SDK design: one client over Spot REST
@@ -12,7 +12,9 @@ reference implementation; behaviour should match it.
 import kraken "github.com/krakenfx/kraken-api-sdk/go"
 ```
 
-## Layout
+## Planned layout
+
+Packages are created as their roadmap milestone is reached.
 
 | Package | Purpose | Rust counterpart |
 |---|---|---|

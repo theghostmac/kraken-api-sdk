@@ -17,10 +17,9 @@ one ships with tests. Rust paths are relative to `../rust/src`.
 
 1. **`types/symbol.go`** ← `types/symbol.rs`
    - `type Symbol struct{ s string }`, `NewSymbol(string) (Symbol, error)`, `(Symbol) String() string`
-   - Sentinel errors: `ErrSymbolEmpty`, `ErrLegacyPrefix`, `ErrNonAlphanumeric`, `ErrMissingSeparator`
+   - Reuse the shared errors in `types/errors.go`: `ErrEmpty`, `ErrLegacyPrefix`, `ErrNonAlphanumeric`, `ErrMissingSeparator`
    - Port every test in `symbol.rs` into `types/symbol_test.go` (table-driven).
-2. **`types/asset.go`** ← `types/asset.rs`
-   - `AssetCode`, `NewAssetCode`, `ErrNonAlphabetic`, unexported `normaliseAsset(raw string) string` (legacy → modern).
+2. **`types/asset.go`** ← `types/asset.rs` — done.
 3. **`types/ids.go`** ← `types/ids.rs`
    - `TxID`, `ClOrdID` + `NewClOrdID(string) (ClOrdID, error)` + `AllocateClOrdID() ClOrdID`, `APIKey`, `APISecret` + `APISecretFromBase64(string) (APISecret, error)`.
    - `APIKey`/`APISecret` must redact in `String()`, `GoString()` and `fmt` verbs.
